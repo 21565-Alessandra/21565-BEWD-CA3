@@ -1,17 +1,18 @@
 <?php 
 include 'library/DBConnection.php';
-$sql = "SELECT * FROM albums";
+$sql = "SELECT * FROM ycollection";
 $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <!-- Required meta tags -->
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>YALP STORE</title>
+<title>YALP COLLECTION</title>
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
@@ -23,24 +24,33 @@ $result = $conn->query($sql);
 </head>
 
 <body>
+
     <?php include 'NavBar.php' ?>
-    <div class="container" style="margin-top: 200px; text-align: center;">
-    <body class="h-100 text-center text-white bg-dark">
+    <div class="container" style="margin-top: 20px;" >
+    <h1>YALP COLLECTION</h1>
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  
+<div class="container">
+    <div class="row">
 
-  <main class="px-3">
-    <h1>WELCOME TO YALP STORE</h1>
-    <p class="lead">View, Edit, Update and Delete albums on our collection!</p>
-    <p class="lead">
-      <a href="OtherCollection.php" class="btn btn-lg btn-secondary fw-bold border-white bg-dark">View Collection</a>
-    </p>
-  </main>
+    <?php
+        if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+                echo '<div class="col-3">';
+                    echo '<div class="card" style="width: 18rem;">';
+                        echo '<img src="./assets/' .$row['image']. '" class="card-img-top" alt="...">';
+                        echo '<div class="card-body">';
+                            echo '<h5 class="card-title">' .$row['album']. '</h5>';
+                            echo '<p class="card-text">' .$row['description']. '</p>';
+                            echo '<a href="#" class="btn btn-outline-primary">View Album</a>';
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';
+            }
+        }
+    ?>
 
+    </div>
 </div>
-
-   
 
 </body>
 </html>
