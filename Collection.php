@@ -55,7 +55,49 @@ $result = $conn->query($sql);
             ?>
             </tbody>
         </table>
-    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/White-Album.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">WHITE ALBUM</h5>
+                        <p class="card-text">The Beatles, also known colloquially as the White Album, is the ninth studio album and only double album by the English rock band the Beatles, released on 22 November 1968. </p>
+                        <a href="#" class="btn btn-outline-primary">View Album</a>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/black-album.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">BLACK ALBUM</h5>
+                        <p class="card-text">Metallica is fifth studio album by American heavy metal band Metallica. Released 1991, it is commonly referred to as The Black Album because of its packaging design. </p>
+                        <a href="#" class="btn btn-outline-primary">View Album</a>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/Dark_Side_of_the_Moon.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">DARK SIDE OF THE MOON</h5>
+                        <p class="card-text">The Dark Side of the Moon is the eighth studio album by the English rock band Pink Floyd, released on 1 March 1973 by Harvest Records.  </p>
+                        <a href="#" class="btn btn-outline-primary">View Album</a>
+                    </div>
+                </div> 
+            </div>
+
+        </div> 
+    </div> 
+
+
+</div>
 
 </body>
 </html>
