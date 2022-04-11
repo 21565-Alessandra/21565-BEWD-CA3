@@ -34,7 +34,7 @@ $result = $conn->query($sql);
                     <th scope="col">Band/Singer/Artist</th>
                     <th scope="col">Label</th>
                     <th scope="col">Year</th>
-                    <th scope="col"><a class="btn btn-success" href="NewAlbum.php" role="new">New</a></th>
+                    <th scope="col"><a class="btn btn-outline-success" href="NewAlbum.php" role="new">New</a></th>
                 <tr>
             </thead>
             <tbody>
@@ -47,8 +47,8 @@ $result = $conn->query($sql);
                         echo "<td>".$row['band_singer']."</td>";
                         echo "<td>".$row['label']."</td>";
                         echo "<td>".$row['year_released']."</td>";
-                        echo "<td><a class='btn btn-primary' href='UpdateAlbum.php?id=".$row['id']."' role='update'>Update</a></td>";
-                        echo "<td><a class='btn btn-danger' href='DeleteAlbum.php?id=".$row['id']."' role='delete'>Delete</a></td>";
+                        echo "<td><a class='btn btn-outline-primary' href='UpdateAlbum.php?id=".$row['id']."' role='update'>Update</a></td>";
+                        echo "<td><a class='btn btn-outline-danger' href='DeleteAlbum.php?id=".$row['id']."' role='delete'>Delete</a></td>";
                         echo "</tr>";
                     } 
                 }

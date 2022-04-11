@@ -19,8 +19,8 @@
             echo "<a class='btn btn-danger' href='LogOut.php'>Log Out</a>";
           }
           else{
-            echo "<a class='btn btn-primary' href='LogIn.php'>Log In</a>";
-            echo "<a class='btn btn-success' href='SignIn.php'>Sign In</a>";
+            echo "<a class='btn btn-outline-primary' href='LogIn.php'>Log In</a>";
+            echo "<a class='btn btn-outline-success' href='SignIn.php'>Sign In</a>";
             session_destroy();
           }
         ?>
