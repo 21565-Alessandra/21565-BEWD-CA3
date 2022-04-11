@@ -24,10 +24,23 @@ $result = $conn->query($sql);
 
 <body>
     <?php include 'NavBar.php' ?>
-    <div class="container">
+    <div class="container" style="margin-top: 200px; text-align: center;">
+    <body class="h-100 text-center text-white bg-dark">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  
+
+  <main class="px-3">
     <h1>WELCOME TO YALP STORE</h1>
-        
-    </div>
+    <p class="lead">View, Edit, Update and Delete albums on our collection!</p>
+    <p class="lead">
+      <a href="Collection.php" class="btn btn-lg btn-secondary fw-bold border-white bg-dark">View Collection</a>
+    </p>
+  </main>
+
+</div>
+
+   
 
 </body>
 </html>

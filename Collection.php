@@ -24,9 +24,9 @@ $result = $conn->query($sql);
 
 <body>
     <?php include 'NavBar.php' ?>
-    <div class="container">
+    <div class="container" style="margin-top: 20px;" >
     <h1>YALP COLLECTION</h1>
-        <table class="table">
+        <table class="table" style="margin-top: 20px; margin-bottom: 50px;">
             <thead>
                 <tr>
                     <th scope="col">#</th>
