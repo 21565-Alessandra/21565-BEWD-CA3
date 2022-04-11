@@ -15,6 +15,9 @@
         <h1>Log In</h1>
         <form action="SignUp.php" class="needs-validation" novalidate method="POST" autocomplete="off">
             <div class="mb-3">
+
+            <img src="./assets/yalpimg.jpg" class="img-fluid" alt="...">
+
                 <label for="username" class="form-label">Username</label>
                 <input  type="text" 
                         class="form-control" 

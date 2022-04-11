@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 <body>
     <?php include 'NavBar.php' ?>
     <div class="container">
-    <h1>Music Store </h1>
+    <h1>YALP STORE </h1>
         <table class="table">
             <thead>
                 <tr>

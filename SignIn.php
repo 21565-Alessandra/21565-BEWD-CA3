@@ -19,6 +19,9 @@
     <div class="container">
         
         <h1>Sign In</h1>
+
+        <img src="./assets/yalpsiimg.png" class="img-fluid" alt="...">
+
         <form action="RegisterUser.php" class="needs-validatio" novalidate method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
