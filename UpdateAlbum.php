@@ -8,7 +8,7 @@ $result = $conn->query($sql);
 
 
 if($result->num_rows==0){
-    header("Location: index.php");
+    header("Location: collection.php");
 }
 
 $row=$result->fetch_assoc();

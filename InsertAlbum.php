@@ -40,7 +40,7 @@ if(empty($error)){
         $stmt->execute();
         $conn->close();
 
-        header("Location: index.php");
+        header("Location: collection.php");
 }else{ 
 
         require_once('NewAlbum.php');

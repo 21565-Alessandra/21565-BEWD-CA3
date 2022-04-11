@@ -16,6 +16,6 @@ $stmt->execute();
 $conn->close();
 
 
-header("Location: index.php");
+header("Location: collection.php");
 
 ?>
