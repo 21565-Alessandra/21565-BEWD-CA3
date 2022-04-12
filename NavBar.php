@@ -16,7 +16,7 @@
           session_start();
           if(isset($_SESSION) && isset($_SESSION['id'])){
             echo  "<a class='btn disabled btn-dark' href='#'>".$_SESSION['username']."</a>";
-            echo "<a class='btn btn-danger' href='LogOut.php'>Log Out</a>";
+            echo "<a class='btn btn-outline-danger' href='LogOut.php'>Log Out</a>";
           }
           else{
             echo "<a class='btn btn-outline-primary' href='LogIn.php' style='margin: 2px'>Log In</a>";

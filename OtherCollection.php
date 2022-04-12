@@ -28,6 +28,7 @@ $result = $conn->query($sql);
     <?php include 'NavBar.php' ?>
     <div class="container" style="margin-top: 20px;" >
     <h1>YALP COLLECTION</h1>
+    <a class="btn btn-outline-success" href="AddAlbum.php" role="new" style="margin-top:30px;">Add Album</a>
 
 <div class="container">
     <div class="row">
@@ -35,13 +36,14 @@ $result = $conn->query($sql);
     <?php
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-                echo '<div class="col-3">';
+                echo '<div class="col-3" style="margin: 50px">';
                     echo '<div class="card" style="width: 18rem;">';
                         echo '<img src="./assets/' .$row['image']. '" class="card-img-top" alt="...">';
                         echo '<div class="card-body">';
                             echo '<h5 class="card-title">' .$row['album']. '</h5>';
                             echo '<p class="card-text">' .$row['description']. '</p>';
-                            echo '<a href="#" class="btn btn-outline-primary">View Album</a>';
+                            echo "<td><a class='btn btn-outline-primary' style='margin: 2px' href='AlterAlbum.php?id=".$row['id']."' role='update'>Update</a></td>";
+                            echo "<td><a class='btn btn-outline-danger' style='margin: 2px' href='DestroyAlbum.php?id=".$row['id']."' role='delete'>Delete</a></td>";
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';
