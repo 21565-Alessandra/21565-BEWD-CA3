@@ -4,7 +4,7 @@ include 'library/DBConnection.php';
 
 
 // sql to delete a record
-$sql = "DELETE FROM albums WHERE id=?";
+$sql = "DELETE FROM ycollection WHERE id=?";
 
 $stmt=$conn->prepare($sql);
 
@@ -19,3 +19,5 @@ $conn->close();
 header("Location: collection.php");
 
 ?>
+
+<?php include 'NavBar.php' ?>

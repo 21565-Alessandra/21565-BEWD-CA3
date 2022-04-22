@@ -34,7 +34,7 @@ $result = $conn->query($sql);
     <h1>WELCOME TO YALP STORE</h1>
     <p class="lead">View, Edit, Update and Delete albums on our collection!</p>
     <p class="lead">
-      <a href="OtherCollection.php" class="btn btn-lg btn-secondary fw-bold border-white bg-dark">View Collection</a>
+      <a href="Collection.php" class="btn btn-lg btn-secondary fw-bold border-white bg-dark">View Collection</a>
     </p>
   </main>
 

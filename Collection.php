@@ -1,11 +1,12 @@
 <?php 
 include 'library/DBConnection.php';
-$sql = "SELECT * FROM albums";
+$sql = "SELECT * FROM ycollection";
 $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <!-- Required meta tags -->
    <meta charset="utf-8">
@@ -23,101 +24,35 @@ $result = $conn->query($sql);
 </head>
 
 <body>
+
     <?php include 'NavBar.php' ?>
     <div class="container" style="margin-top: 20px;" >
     <h1>YALP COLLECTION</h1>
-        <table class="table" style="margin-top: 20px; margin-bottom: 50px;">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Band/Singer/Artist</th>
-                    <th scope="col">Label</th>
-                    <th scope="col">Year</th>
-                    <th scope="col"><a class="btn btn-outline-success" href="NewAlbum.php" role="new">New</a></th>
-                <tr>
-            </thead>
-            <tbody>
-                <?php 
-                    if($result->num_rows>0){
-                        while($row=$result->fetch_assoc()){
-                            echo "<tr>";
-                            echo "<th scope='row'>".$row['id']."</th>";
-                            echo "<td>".$row['name']."</td>";
-                            echo "<td>".$row['band_singer']."</td>";
-                            echo "<td>".$row['label']."</td>";
-                            echo "<td>".$row['year_released']."</td>";
-                            echo "<td><a class='btn btn-outline-primary' href='UpdateAlbum.php?id=".$row['id']."' role='update'>Update</a></td>";
-                            echo "<td><a class='btn btn-outline-danger' href='DeleteAlbum.php?id=".$row['id']."' role='delete'>Delete</a></td>";
-                            echo "</tr>";
-                        } 
-                    }
-                ?>
-            </tbody>
-        </table>
-  
-        <?php
+    <a class="btn btn-outline-success" href="NewAlbum.php" role="new" style="margin-top:30px;">Add Album</a>
 
-        class Album {
+<div class="container">
+    <div class="row">
 
-            public $name;
-            public $description;
-
-            public function __construct($n, $d){
-                $this->name = $n;
-                $this->description = $d;
+    <?php
+        if($result->num_rows>0){
+            while($row = $result->fetch_assoc()){
+                echo '<div class="col-3" style="margin: 30px">';
+                    echo '<div class="card" style="width: 18rem;">';
+                        echo '<img src="./assets/' .$row['image']. '" class="card-img-top" alt="...">';
+                        echo '<div class="card-body">';
+                            echo '<h5 class="card-title">' .$row['album']. '</h5>';
+                            echo '<p class="card-text">' .$row['description']. '</p>';
+                            echo "<td><a class='btn btn-outline-primary' style='margin: 2px' href='EditAlbum.php?id=".$row['id']."' role='update'>Update</a></td>";
+                            echo "<td><a class='btn btn-outline-danger' style='margin: 2px' href='DeleteAlbum.php?id=".$row['id']."' role='delete'>Delete</a></td>";
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';
             }
-            
         }
+    ?>
 
-        $album1 = new Album("WHITE ALBUM", "The Beatles, also known colloquially as the White Album, is the ninth studio album and only double album by the English rock band the Beatles, released on 22 November 1968." );
-        $album2 = new Album("BLACK ALBUM", "Metallica is fifth studio album by American heavy metal band Metallica. Released 1991, it is commonly referred to as The Black Album because of its packaging design." );
-        $album3 = new Album("DARK SIDE OF THE MOON", "The Dark Side of the Moon is the eighth studio album by the English rock band Pink Floyd, released on 1 March 1973 by Harvest Records." );
-        ?>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./assets/White-Album.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $album1->name ?></h5>
-                            <p class="card-text"><?= $album1->description ?></p>
-                            <a href="#" class="btn btn-outline-primary">View Album</a>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./assets/black-album.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title"><?= $album2->name ?></h5>
-                            <p class="card-text"><?= $album2->description ?></p>
-                            <a href="#" class="btn btn-outline-primary">View Album</a>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./assets/Dark_Side_of_the_Moon.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h5 class="card-title"><?= $album3->name ?></h5>
-                            <p class="card-text"><?= $album3->description ?></p>
-                            <a href="#" class="btn btn-outline-primary">View Album</a>
-                        </div>
-                    </div> 
-                </div>
-
-            </div> 
-        </div> 
-
-
+    </div>
 </div>
-
-
 
 </body>
 </html>
