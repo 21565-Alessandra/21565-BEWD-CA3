@@ -1,18 +1,19 @@
 <?php 
 
+// Calls the file from library folder that connects to the database 
 include 'library/DBConnection.php';
 if(isset($_SESSION)){
     session_destroy();
 }
 
-//THIS PAGE NEEDS SANITIZATION AND VALIDATION
+// Link the information inserted to the database
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
 
 if ($password === $confirmPassword){
-    //encrypt the password
+    // Encrypt the password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 }
 
@@ -23,9 +24,9 @@ $stmt = $conn->prepare($sql);
 
 $stmt->bind_param("sss", $username, $email, $hashedPassword);
 
-//send to database
+// Send to database
 $stmt->execute();
-//check to see if we have an id
+// Check to see if we have an id
 if($stmt->insert_id){
     $error['username'] = 'UserName already Exists';
 }
@@ -36,10 +37,7 @@ $_SESSION['id'] = $stmt->insert_id;
 
 $conn->close();
 
-
-
+// Will direct the user to the index page
 header("Location: index.php");
-
-
 
 ?>

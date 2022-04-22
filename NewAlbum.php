@@ -9,6 +9,8 @@
 
 </head>
 <body>
+
+    <!-- Adding navbar to the page -->
     <?php include 'NavBar.php' ?>
     <div class="container">
         
@@ -17,11 +19,13 @@
             <div class="mb-3">
                 <label for="album" class="form-label">Album Name</label>
                 <input type="text" class="form-control" id="album" name="album" aria-describedby="albumHelp" value="<?php if(isset($album)){ echo $album;}  ?>" >
-                <!-- show error to user  -->
+                <!-- Show error to user  -->
                 <span class="text-danger">
                     <?= isset($error['album']) ? $error['album'] : ''?> 
                 </span>
             </div>
+
+            <!-- Form to add new album to the collection -->
             <div class="mb-3">
                 <label for="band" class="form-label">Band/Singer/Artist</label>
                 <input type="text" class="form-control" id="band" name="band" value="<?= (isset($band)) ? $band : NULL ?>" aria-describedby="bandHelp">

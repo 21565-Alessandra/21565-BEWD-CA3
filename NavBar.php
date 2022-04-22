@@ -12,6 +12,8 @@
         </li>
       </ul>
       <form class="d-flex">
+
+
         <?php 
           session_start();
           if(isset($_SESSION) && isset($_SESSION['id'])){
@@ -24,9 +26,6 @@
             session_destroy();
           }
         ?>
-        
-
-       
         
       </form>
     </div>

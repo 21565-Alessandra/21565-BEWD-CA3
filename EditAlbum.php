@@ -1,7 +1,8 @@
+<!-- Including the file from library folder that connects to the database -->
 <?php
 include 'library/DBConnection.php';
 
-
+// Getting all information from ycollection table by the id of the album that will be edited
 $sql = "SELECT * FROM ycollection WHERE id=".$_GET['id'];
 
 $result = $conn->query($sql);
@@ -26,10 +27,15 @@ $row=$result->fetch_assoc();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </head>
+
+ 
 <body>
+
+    <!-- Adding navbar to the page -->
     <?php include 'NavBar.php' ?>
     <div class="container">
-        
+
+        <!-- The form to change the data of the selected album -->        
         <h1>Edit Album</h1> 
         <form action="UpdateAlbum.php" method="POST">
             <input type="hidden" value="<?=$_GET['id']?>" name="id">
@@ -62,7 +68,7 @@ $row=$result->fetch_assoc();
                 <input type="text" class="form-control" id="image" name="image" aria-describedby="imageHelp" value="<?= $row['image']?>">
             </div>
             
-           
+            <!-- Button to submit and update the changes -->
             <button type="submit" class="btn btn-outline-primary">Update</button>
         </form>
 

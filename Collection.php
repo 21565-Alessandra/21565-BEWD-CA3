@@ -1,3 +1,5 @@
+<!-- Including the file from library folder that connects to the database to access the ycollection table -->
+
 <?php 
 include 'library/DBConnection.php';
 $sql = "SELECT * FROM ycollection";
@@ -25,14 +27,17 @@ $result = $conn->query($sql);
 
 <body>
 
+<!-- Adding navbar to the page -->
     <?php include 'NavBar.php' ?>
     <div class="container" style="margin-top: 20px;" >
     <h1>YALP COLLECTION</h1>
     <a class="btn btn-outline-success" href="NewAlbum.php" role="new" style="margin-top:30px;">Add Album</a>
 
+<!-- New container with grid structure that show the cards on the screen -->    
 <div class="container">
     <div class="row">
 
+<!-- The cards are obtaining and showing the image, title, price, and description -->
     <?php
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){

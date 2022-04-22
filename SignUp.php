@@ -1,7 +1,6 @@
 <?php
 
-
-
+// Calls the file from library folder that connects to the database 
 include 'library/DBConnection.php';
 
 if(isset($_SESSION)){
@@ -9,11 +8,12 @@ if(isset($_SESSION)){
 }
 
 $error= [];
-//NEED TO BE SANITIZED AND FILTERED
+// Sanitizing is removing anything not adhering to the filter
 $username = filter_input(INPUT_POST, 'username',  FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST, 'password',  FILTER_SANITIZE_STRING);
 
-
+// Checking if the information was inserted and if not it will 
+// Show the message saying that the information is required
 if(empty($username) || !isset($username)) {
     $error ['username'] = 'Username is empty';
 }
@@ -27,11 +27,12 @@ if(empty($error)){
 
     $stmt->bind_param("s", $username);
 
-    //send to database
+    // Send to database
     $stmt->execute();
-    $result = $stmt->get_result(); // get the mysqli result
-    $user = $result->fetch_assoc(); // fetch data  
+    $result = $stmt->get_result(); // Get the mysqli result
+    $user = $result->fetch_assoc(); // Fetch data  
 
+    // To verify the password
     echo password_verify($password, $user['password']);
     if(!empty($user)){
         if(password_verify($password, $user['password'])){

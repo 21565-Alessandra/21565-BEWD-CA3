@@ -12,6 +12,8 @@
 
 </head>
 <body>
+
+    <!-- Adding nav bar on the page -->
     <?php include 'NavBar.php' ?>
     <div class="container">
         
@@ -19,6 +21,7 @@
 
         <img src="./assets/yalpsiimg.png" class="img-fluid" alt="...">
 
+        <!-- Form to get user input -->
         <form action="RegisterUser.php" class="needs-validatio" novalidate method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>

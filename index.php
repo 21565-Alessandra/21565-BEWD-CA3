@@ -5,6 +5,7 @@
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+     
 <title>YALP STORE</title>
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -16,14 +17,17 @@
 
 </head>
 
+
 <body>
+
+    <!-- Adding navbar to the page -->
     <?php include 'NavBar.php' ?>
     <div class="container" style="margin-top: 200px; text-align: center;">
     <body class="h-100 text-center text-white bg-dark">
 
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   
-
+  <!-- Welcome message on the center of the page -->
   <main class="px-3">
     <h1>WELCOME TO YALP STORE</h1>
     <p class="lead">View, Edit, Update and Delete albums on our collection!</p>
