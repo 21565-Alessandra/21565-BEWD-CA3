@@ -12,10 +12,16 @@
 
     <!-- Adding navbar to the page -->
     <?php include 'NavBar.php' ?>
-    <div class="container">
+    <div class="container" style="margin-top: 20px">
         
         <h1>Add New Album</h1>
+
+        <img src="./assets/unsplash.jpg" class="img-fluid" alt="..." style="width: 1200px; margin-top: 10px; margin-bottom: 10px"> 
+
         <form action="InsertAlbum.php" class="needs-validation" novalidate method="POST">
+
+        <!-- Form to add new album to the collection -->
+
             <div class="mb-3">
                 <label for="album" class="form-label">Album Name</label>
                 <input type="text" class="form-control" id="album" name="album" aria-describedby="albumHelp" value="<?php if(isset($album)){ echo $album;}  ?>" >
@@ -24,8 +30,6 @@
                     <?= isset($error['album']) ? $error['album'] : ''?> 
                 </span>
             </div>
-
-            <!-- Form to add new album to the collection -->
             <div class="mb-3">
                 <label for="band" class="form-label">Band/Singer/Artist</label>
                 <input type="text" class="form-control" id="band" name="band" value="<?= (isset($band)) ? $band : NULL ?>" aria-describedby="bandHelp">

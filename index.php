@@ -17,7 +17,6 @@
 
 </head>
 
-
 <body>
 
     <!-- Adding navbar to the page -->

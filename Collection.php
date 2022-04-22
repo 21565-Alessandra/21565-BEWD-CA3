@@ -30,35 +30,38 @@ $result = $conn->query($sql);
 <!-- Adding navbar to the page -->
     <?php include 'NavBar.php' ?>
     <div class="container" style="margin-top: 20px;" >
-    <h1>YALP COLLECTION</h1>
-    <a class="btn btn-outline-success" href="NewAlbum.php" role="new" style="margin-top:30px;">Add Album</a>
+        <h1>YALP COLLECTION</h1>
+        <img src="./assets/collection-img.jpg" class="img-fluid" alt="...">
+        <a class="btn btn-outline-success" href="NewAlbum.php" role="new" style="margin-top:30px;">Add Album</a>
 
-<!-- New container with grid structure that show the cards on the screen -->    
-<div class="container">
-    <div class="row">
+    
 
-<!-- The cards are obtaining and showing the image, title, price, and description -->
-    <?php
-        if($result->num_rows>0){
-            while($row = $result->fetch_assoc()){
-                echo '<div class="col-3" style="margin: 30px">';
-                    echo '<div class="card" style="width: 18rem;">';
-                        echo '<img src="./assets/' .$row['image']. '" class="card-img-top" alt="...">';
-                        echo '<div class="card-body">';
-                            echo '<h5 class="card-title">' .$row['album']. '</h5>';
-                            echo '<h5 class="card-text"> €' .$row['price']. '</h5>';
-                            echo '<p class="card-text">'  .$row['description']. '</p>';
-                            echo "<td><a class='btn btn-outline-primary' style='margin: 2px' href='EditAlbum.php?id=".$row['id']."' role='update'>Update</a></td>";
-                            echo "<td><a class='btn btn-outline-danger' style='margin: 2px' href='DeleteAlbum.php?id=".$row['id']."' role='delete'>Delete</a></td>";
+        <!-- New container with grid structure that show the cards on the screen -->    
+        <div class="container">
+            <div class="row">
+
+            <!-- The cards are obtaining and showing the image, title, price, and description -->
+            <?php
+                if($result->num_rows>0){
+                    while($row = $result->fetch_assoc()){
+                        echo '<div class="col-3" style="margin: 30px">';
+                            echo '<div class="card" style="width: 18rem;">';
+                                echo '<img src="./assets/' .$row['image']. '" class="card-img-top" alt="...">';
+                                echo '<div class="card-body">';
+                                    echo '<h5 class="card-title">' .$row['album']. '</h5>';
+                                    echo '<h5 class="card-text"> €' .$row['price']. '</h5>';
+                                    echo '<p class="card-text">'  .$row['description']. '</p>';
+                                    echo "<td><a class='btn btn-outline-primary' style='margin: 2px' href='EditAlbum.php?id=".$row['id']."' role='update'>Update</a></td>";
+                                    echo "<td><a class='btn btn-outline-danger' style='margin: 2px' href='DeleteAlbum.php?id=".$row['id']."' role='delete'>Delete</a></td>";
+                                echo '</div>';
+                            echo '</div>';
                         echo '</div>';
-                    echo '</div>';
-                echo '</div>';
-            }
-        }
-    ?>
+                    }
+                }
+            ?>
 
+        </div>
     </div>
-</div>
 
 </body>
 </html>
