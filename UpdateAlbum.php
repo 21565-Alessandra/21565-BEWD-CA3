@@ -8,15 +8,16 @@ $sql = "UPDATE ycollection
             year=?, 
             label=?, 
             description=?, 
+            price=?,
             image=?            
         WHERE id=?";
 
 
 $stmt = $conn->prepare($sql);
 
-$stmt->bind_param("ssssssi", $album, 
+$stmt->bind_param("sssssdsi", $album, 
 $band, $year, $label,  
-$description, $image, $id);
+$description, $price, $image, $id);
 
 $id = $_POST["id"];
 $album = $_POST["album"];
@@ -24,6 +25,7 @@ $band = $_POST["band"];
 $year = $_POST["year"];
 $label = $_POST["label"];
 $description = $_POST["description"];
+$price = $_POST["price"];
 $image = $_POST["image"];
 
 $stmt->execute();

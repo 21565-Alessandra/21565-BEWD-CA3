@@ -54,6 +54,10 @@ $row=$result->fetch_assoc();
                 <input type="text" class="form-control" id="description" name="description" aria-describedby="descriptionHelp" value="<?= $row['description']?>">
             </div>
             <div class="mb-3">
+                <label for="price" class="form-description">Price</label>
+                <input type="text" class="form-control" id="price" name="price" aria-describedby="priceHelp" value="<?= $row['price']?>">
+            </div>
+            <div class="mb-3">
                 <label for="image" class="form-description">Cover</label>
                 <input type="text" class="form-control" id="image" name="image" aria-describedby="imageHelp" value="<?= $row['image']?>">
             </div>

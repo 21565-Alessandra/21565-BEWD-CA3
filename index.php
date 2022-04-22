@@ -1,9 +1,3 @@
-<?php 
-include 'library/DBConnection.php';
-$sql = "SELECT * FROM albums";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -14,6 +14,7 @@ $band = filter_input(INPUT_POST, 'band',  FILTER_SANITIZE_STRING);
 $year = filter_input(INPUT_POST, 'year',  FILTER_SANITIZE_URL);
 $label = filter_input(INPUT_POST, 'label',  FILTER_SANITIZE_STRING);
 $description = filter_input(INPUT_POST, 'description',  FILTER_SANITIZE_URL);
+$price = filter_input(INPUT_POST, 'price',  FILTER_SANITIZE_URL);
 $image = filter_input(INPUT_POST, 'image',  FILTER_SANITIZE_URL);
 
 if(!isset($album) || empty($album)){
@@ -31,6 +32,9 @@ if(!isset($label) || empty($label)){
 if(!isset($description) || empty($description)){
     $error['description'] = 'Description is required';
 }
+if(!isset($price) || empty($price)){
+        $error['price'] = 'Price is required';
+    }
 if(!isset($image) || empty($image)){
     $error['image'] = 'Image is required';
 }
@@ -38,12 +42,12 @@ if(!isset($image) || empty($image)){
 
 if(empty($error)){
 
-        $sql = "INSERT INTO ycollection (album, band, year, label, description, image) 
-        VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO ycollection (album, band, year, label, description, price, image) 
+        VALUES (?,?,?,?,?,?,?)";
 
         $stmt = $conn->prepare($sql); 
 
-        $stmt->bind_param("ssssss", $album, $band, $year, $label, $description, $image);
+        $stmt->bind_param("sssssds", $album, $band, $year, $label, $description, $price, $image);
 
         //send to database
         $stmt->execute();

@@ -43,6 +43,11 @@
                 <span class="text-danger"><?= isset($error['description']) ? $error['description'] : '' ?> </span>
            </div>
            <div class="mb-3">
+                <label for="price" class="form-description">Price</label>
+                <input type="text" class="form-control" id="price" name="price" value="<?= (isset($price))? $price : NULL ?>" aria-describedby="priceHelp">
+                <span class="text-danger"><?= isset($error['price']) ? $error['price'] : '' ?> </span>
+           </div>
+           <div class="mb-3">
                 <label for="image" class="form-description">Album Cover</label>
                 <input type="file" class="form-control" id="image" name="image" value="<?= (isset($image))? $description : NULL ?>" aria-describedby="imageHelp">
                 <span class="text-danger"><?= isset($error['image']) ? $error['image'] : '' ?> </span>
